@@ -1,0 +1,495 @@
+<div class="flex flex-wrap items-center gap-3 mb-8">
+  <button
+    id="filterToday"
+    class="filter-btn px-4 py-2 text-sm font-medium bg-indigo-600 text-white rounded-lg transition-colors"
+  >
+    Today
+  </button>
+  <button
+    id="filter7Days"
+    class="filter-btn px-4 py-2 text-sm font-medium text-slate-600 bg-white rounded-lg"
+  >
+    Last 7 Days
+  </button>
+  <button
+    id="filter30Days"
+    class="filter-btn px-4 py-2 text-sm font-medium text-slate-600 bg-white rounded-lg"
+  >
+    Last 30 Days
+  </button>
+  <button
+    id="filter90Days"
+    class="filter-btn px-4 py-2 text-sm font-medium text-slate-600 bg-white rounded-lg"
+  >
+    Last 90 Days
+  </button>
+  <button
+    class="px-4 py-2 text-sm font-medium text-slate-600 bg-white rounded-lg"
+  >
+    <i class="fa-solid fa-calendar mr-2"></i>Custom Range
+  </button>
+</div>
+
+<!-- Analytics Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-sm text-slate-500 font-medium">Page Views</span>
+      <span class="text-emerald-500 text-xs font-semibold flex items-center">
+        <i class="fa-solid fa-arrow-up mr-1"></i>15.2%
+      </span>
+    </div>
+    <h3 class="text-3xl font-bold text-slate-900">284,532</h3>
+  </div>
+
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-sm text-slate-500 font-medium">Unique Visitors</span>
+      <span class="text-emerald-500 text-xs font-semibold flex items-center">
+        <i class="fa-solid fa-arrow-up mr-1"></i>8.7%
+      </span>
+    </div>
+    <h3 class="text-3xl font-bold text-slate-900">48,291</h3>
+  </div>
+
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-sm text-slate-500 font-medium">Bounce Rate</span>
+      <span class="text-rose-500 text-xs font-semibold flex items-center">
+        <i class="fa-solid fa-arrow-up mr-1"></i>2.3%
+      </span>
+    </div>
+    <h3 class="text-3xl font-bold text-slate-900">32.8%</h3>
+  </div>
+
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-sm text-slate-500 font-medium">Avg. Session</span>
+      <span class="text-emerald-500 text-xs font-semibold flex items-center">
+        <i class="fa-solid fa-arrow-up mr-1"></i>12.5%
+      </span>
+    </div>
+    <h3 class="text-3xl font-bold text-slate-900">4m 32s</h3>
+  </div>
+</div>
+
+<!-- Traffic Sources -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+  <div
+    class="lg:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-slate-100"
+  >
+    <div class="flex items-center justify-between mb-6">
+      <h3 class="text-lg font-bold text-slate-900">Traffic Overview</h3>
+      <div class="flex space-x-2">
+        <button
+          id="chartTypeLine"
+          class="chart-type-btn px-3 py-1.5 text-xs font-medium bg-indigo-100 text-indigo-600 rounded-lg transition-colors"
+        >
+          <i class="fa-solid fa-chart-line mr-1"></i>Line
+        </button>
+        <button
+          id="chartTypeBar"
+          class="chart-type-btn px-3 py-1.5 text-xs font-medium text-slate-500 hover:bg-slate-100 rounded-lg transition-colors"
+        >
+          <i class="fa-solid fa-chart-bar mr-1"></i>Bar
+        </button>
+      </div>
+    </div>
+    <div class="h-72">
+      <canvas id="trafficChart"></canvas>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <h3 class="text-lg font-bold text-slate-900 mb-6">Traffic Sources</h3>
+    <div class="h-48 mb-4">
+      <canvas id="trafficSourcesChart"></canvas>
+    </div>
+    <div class="space-y-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-3 h-3 rounded-full bg-indigo-500 mr-2"></div>
+          <span class="text-sm text-slate-600">Direct</span>
+        </div>
+        <span class="text-sm font-semibold text-slate-900">45%</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-3 h-3 rounded-full bg-emerald-500 mr-2"></div>
+          <span class="text-sm text-slate-600">Organic Search</span>
+        </div>
+        <span class="text-sm font-semibold text-slate-900">28%</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+          <span class="text-sm text-slate-600">Social Media</span>
+        </div>
+        <span class="text-sm font-semibold text-slate-900">18%</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
+          <span class="text-sm text-slate-600">Referral</span>
+        </div>
+        <span class="text-sm font-semibold text-slate-900">9%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Device & Browser Stats -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <h3 class="text-lg font-bold text-slate-900 mb-6">Device Breakdown</h3>
+    <div class="h-64">
+      <canvas id="deviceChart"></canvas>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <h3 class="text-lg font-bold text-slate-900 mb-6">Top Browsers</h3>
+    <div class="h-64">
+      <canvas id="browserChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Destroy existing charts if they exist (fixes navigation issue)
+  const chartIds = [
+    "trafficChart",
+    "trafficSourcesChart",
+    "deviceChart",
+    "browserChart",
+  ];
+  chartIds.forEach((id) => {
+    const existingChart = Chart.getChart(id);
+    if (existingChart) {
+      existingChart.destroy();
+    }
+  });
+
+  // Traffic Overview Chart
+  const trafficCtx = document.getElementById("trafficChart").getContext("2d");
+  const trafficGradient = trafficCtx.createLinearGradient(0, 0, 0, 280);
+  trafficGradient.addColorStop(0, "rgba(99, 102, 241, 0.3)");
+  trafficGradient.addColorStop(1, "rgba(99, 102, 241, 0)");
+
+  const trafficData = {
+    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    pageViews: [12500, 18200, 15800, 22400, 19600, 24800, 21200],
+    visitors: [4200, 6100, 5300, 7500, 6600, 8300, 7100],
+  };
+
+  let trafficChart = new Chart(trafficCtx, {
+    type: "line",
+    data: {
+      labels: trafficData.labels,
+      datasets: [
+        {
+          label: "Page Views",
+          data: trafficData.pageViews,
+          borderColor: "#6366f1",
+          backgroundColor: trafficGradient,
+          fill: true,
+          tension: 0.4,
+          borderWidth: 3,
+          pointBackgroundColor: "#6366f1",
+          pointBorderColor: "#fff",
+          pointBorderWidth: 2,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+        },
+        {
+          label: "Unique Visitors",
+          data: trafficData.visitors,
+          borderColor: "#10b981",
+          backgroundColor: "transparent",
+          fill: false,
+          tension: 0.4,
+          borderWidth: 3,
+          borderDash: [5, 5],
+          pointBackgroundColor: "#10b981",
+          pointBorderColor: "#fff",
+          pointBorderWidth: 2,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: {
+        duration: 1000,
+        easing: "easeOutQuart",
+      },
+      interaction: {
+        intersect: false,
+        mode: "index",
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: "top",
+          align: "end",
+          labels: {
+            usePointStyle: true,
+            pointStyle: "circle",
+            padding: 20,
+            font: { family: "Inter", size: 12 },
+          },
+        },
+        tooltip: {
+          backgroundColor: "#1e293b",
+          titleFont: { family: "Inter", size: 14 },
+          bodyFont: { family: "Inter", size: 13 },
+          padding: 12,
+          cornerRadius: 8,
+          displayColors: true,
+          usePointStyle: true,
+          callbacks: {
+            label: function (context) {
+              return (
+                context.dataset.label + ": " + context.parsed.y.toLocaleString()
+              );
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { font: { family: "Inter", size: 12 }, color: "#94a3b8" },
+        },
+        y: {
+          grid: { color: "#f1f5f9", drawBorder: false },
+          ticks: {
+            font: { family: "Inter", size: 12 },
+            color: "#94a3b8",
+            callback: function (value) {
+              return value >= 1000 ? value / 1000 + "k" : value;
+            },
+          },
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+  // Traffic Sources Doughnut Chart
+  const sourcesCtx = document
+    .getElementById("trafficSourcesChart")
+    .getContext("2d");
+  new Chart(sourcesCtx, {
+    type: "doughnut",
+    data: {
+      labels: ["Direct", "Organic Search", "Social Media", "Referral"],
+      datasets: [
+        {
+          data: [45, 28, 18, 9],
+          backgroundColor: ["#6366f1", "#10b981", "#8b5cf6", "#f59e0b"],
+          borderWidth: 0,
+          hoverOffset: 10,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: "70%",
+      animation: {
+        animateScale: true,
+        animateRotate: true,
+        duration: 1000,
+        easing: "easeOutQuart",
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "#1e293b",
+          padding: 12,
+          cornerRadius: 8,
+          callbacks: {
+            label: function (context) {
+              return context.label + ": " + context.parsed + "%";
+            },
+          },
+        },
+      },
+    },
+  });
+
+  // Device Breakdown Chart
+  const deviceCtx = document.getElementById("deviceChart").getContext("2d");
+  new Chart(deviceCtx, {
+    type: "bar",
+    data: {
+      labels: ["Mobile", "Desktop", "Tablet"],
+      datasets: [
+        {
+          label: "Sessions",
+          data: [45200, 38500, 12800],
+          backgroundColor: [
+            "rgba(99, 102, 241, 0.8)",
+            "rgba(16, 185, 129, 0.8)",
+            "rgba(139, 92, 246, 0.8)",
+          ],
+          borderRadius: 8,
+          borderSkipped: false,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      indexAxis: "y",
+      animation: {
+        duration: 800,
+        easing: "easeOutQuart",
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "#1e293b",
+          padding: 12,
+          cornerRadius: 8,
+          callbacks: {
+            label: function (context) {
+              return "Sessions: " + context.parsed.x.toLocaleString();
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { color: "#f1f5f9", drawBorder: false },
+          ticks: {
+            font: { family: "Inter", size: 12 },
+            color: "#94a3b8",
+            callback: function (value) {
+              return value >= 1000 ? value / 1000 + "k" : value;
+            },
+          },
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { family: "Inter", size: 12 }, color: "#64748b" },
+        },
+      },
+    },
+  });
+
+  // Browser Chart
+  const browserCtx = document.getElementById("browserChart").getContext("2d");
+  new Chart(browserCtx, {
+    type: "polarArea",
+    data: {
+      labels: ["Chrome", "Safari", "Firefox", "Edge", "Others"],
+      datasets: [
+        {
+          data: [55, 22, 12, 8, 3],
+          backgroundColor: [
+            "rgba(99, 102, 241, 0.8)",
+            "rgba(16, 185, 129, 0.8)",
+            "rgba(244, 63, 94, 0.8)",
+            "rgba(59, 130, 246, 0.8)",
+            "rgba(156, 163, 175, 0.8)",
+          ],
+          borderWidth: 0,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: {
+        animateScale: true,
+        animateRotate: true,
+        duration: 1000,
+        easing: "easeOutQuart",
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: "right",
+          labels: {
+            usePointStyle: true,
+            pointStyle: "rectRounded",
+            padding: 15,
+            font: { family: "Inter", size: 11 },
+          },
+        },
+        tooltip: {
+          backgroundColor: "#1e293b",
+          padding: 12,
+          cornerRadius: 8,
+          callbacks: {
+            label: function (context) {
+              return context.label + ": " + context.parsed.r + "%";
+            },
+          },
+        },
+      },
+      scales: {
+        r: {
+          display: false,
+        },
+      },
+    },
+  });
+
+  // Chart Type Toggle (Line/Bar)
+  const btnLine = document.getElementById("chartTypeLine");
+  const btnBar = document.getElementById("chartTypeBar");
+
+  function updateChartTypeButton(activeBtn) {
+    [btnLine, btnBar].forEach((btn) => {
+      btn.classList.remove("bg-indigo-100", "text-indigo-600");
+      btn.classList.add("text-slate-500");
+    });
+    activeBtn.classList.remove("text-slate-500");
+    activeBtn.classList.add("bg-indigo-100", "text-indigo-600");
+  }
+
+  btnLine.addEventListener("click", () => {
+    updateChartTypeButton(btnLine);
+    trafficChart.config.type = "line";
+    trafficChart.data.datasets[0].fill = true;
+    trafficChart.data.datasets[0].backgroundColor = trafficGradient;
+    trafficChart.update();
+  });
+
+  btnBar.addEventListener("click", () => {
+    updateChartTypeButton(btnBar);
+    trafficChart.config.type = "bar";
+    trafficChart.data.datasets[0].fill = false;
+    trafficChart.data.datasets[0].backgroundColor = "rgba(99, 102, 241, 0.8)";
+    trafficChart.data.datasets[1].backgroundColor = "rgba(16, 185, 129, 0.8)";
+    trafficChart.update();
+  });
+
+  // Filter buttons event listeners
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => {
+        b.classList.remove("bg-indigo-600", "text-white");
+        b.classList.add(
+          "text-slate-600",
+          "bg-white",
+          "border",
+          "border-slate-200",
+        );
+      });
+      btn.classList.remove(
+        "text-slate-600",
+        "bg-white",
+        "border",
+        "border-slate-200",
+      );
+      btn.classList.add("bg-indigo-600", "text-white");
+    });
+  });
+</script>

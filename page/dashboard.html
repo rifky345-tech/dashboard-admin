@@ -1,0 +1,459 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+  <div
+    class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-shadow duration-300"
+  >
+    <div class="flex items-center justify-between mb-4">
+      <div
+        class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center"
+      >
+        <i class="fa-solid fa-dollar-sign text-indigo-600 text-xl"></i>
+      </div>
+      <span class="text-emerald-500 text-sm font-semibold flex items-center">
+        <i class="fa-solid fa-arrow-up mr-1"></i>12.5%
+      </span>
+    </div>
+    <h3 class="text-2xl font-bold text-slate-900">Rp 124.5M</h3>
+    <p class="text-slate-500 text-sm mt-1">Total Revenue</p>
+  </div>
+
+  <div
+    class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-shadow duration-300"
+  >
+    <div class="flex items-center justify-between mb-4">
+      <div
+        class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center"
+      >
+        <i class="fa-solid fa-shopping-bag text-emerald-600 text-xl"></i>
+      </div>
+      <span class="text-emerald-500 text-sm font-semibold flex items-center">
+        <i class="fa-solid fa-arrow-up mr-1"></i>8.2%
+      </span>
+    </div>
+    <h3 class="text-2xl font-bold text-slate-900">1,248</h3>
+    <p class="text-slate-500 text-sm mt-1">Total Orders</p>
+  </div>
+
+  <div
+    class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-shadow duration-300"
+  >
+    <div class="flex items-center justify-between mb-4">
+      <div
+        class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center"
+      >
+        <i class="fa-solid fa-users text-purple-600 text-xl"></i>
+      </div>
+      <span class="text-emerald-500 text-sm font-semibold flex items-center">
+        <i class="fa-solid fa-arrow-up mr-1"></i>24.3%
+      </span>
+    </div>
+    <h3 class="text-2xl font-bold text-slate-900">5,462</h3>
+    <p class="text-slate-500 text-sm mt-1">Active Users</p>
+  </div>
+
+  <div
+    class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-shadow duration-300"
+  >
+    <div class="flex items-center justify-between mb-4">
+      <div
+        class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center"
+      >
+        <i class="fa-solid fa-chart-pie text-amber-600 text-xl"></i>
+      </div>
+      <span class="text-rose-500 text-sm font-semibold flex items-center">
+        <i class="fa-solid fa-arrow-down mr-1"></i>2.4%
+      </span>
+    </div>
+    <h3 class="text-2xl font-bold text-slate-900">72.4%</h3>
+    <p class="text-slate-500 text-sm mt-1">Conversion Rate</p>
+  </div>
+</div>
+
+<!-- Charts & Activity Row -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+  <!-- Chart Area -->
+  <div
+    class="lg:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-slate-100"
+  >
+    <div class="flex items-center justify-between mb-6">
+      <h3 class="text-lg font-bold text-slate-900">Revenue Overview</h3>
+      <div class="flex space-x-2">
+        <button
+          id="btnMonthly"
+          class="px-4 py-2 text-sm font-medium bg-indigo-100 text-indigo-600 rounded-lg transition-colors"
+        >
+          Monthly
+        </button>
+        <button
+          id="btnWeekly"
+          class="px-4 py-2 text-sm font-medium text-slate-500 hover:bg-slate-100 rounded-lg transition-colors"
+        >
+          Weekly
+        </button>
+        <button
+          id="btnDaily"
+          class="px-4 py-2 text-sm font-medium text-slate-500 hover:bg-slate-100 rounded-lg transition-colors"
+        >
+          Daily
+        </button>
+      </div>
+    </div>
+    <div class="h-72">
+      <canvas id="revenueChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Activity Feed -->
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <h3 class="text-lg font-bold text-slate-900 mb-6">Recent Activity</h3>
+    <div class="space-y-4">
+      <div class="flex items-start space-x-3">
+        <div
+          class="w-9 h-9 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0"
+        >
+          <i class="fa-solid fa-check text-emerald-600 text-sm"></i>
+        </div>
+        <div>
+          <p class="text-sm text-slate-900 font-medium">
+            Order #12345 completed
+          </p>
+          <p class="text-xs text-slate-500 mt-0.5">2 minutes ago</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-3">
+        <div
+          class="w-9 h-9 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0"
+        >
+          <i class="fa-solid fa-user-plus text-indigo-600 text-sm"></i>
+        </div>
+        <div>
+          <p class="text-sm text-slate-900 font-medium">New user registered</p>
+          <p class="text-xs text-slate-500 mt-0.5">15 minutes ago</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-3">
+        <div
+          class="w-9 h-9 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0"
+        >
+          <i class="fa-solid fa-star text-amber-600 text-sm"></i>
+        </div>
+        <div>
+          <p class="text-sm text-slate-900 font-medium">New review received</p>
+          <p class="text-xs text-slate-500 mt-0.5">1 hour ago</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-3">
+        <div
+          class="w-9 h-9 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0"
+        >
+          <i class="fa-solid fa-box text-purple-600 text-sm"></i>
+        </div>
+        <div>
+          <p class="text-sm text-slate-900 font-medium">Product restocked</p>
+          <p class="text-xs text-slate-500 mt-0.5">3 hours ago</p>
+        </div>
+      </div>
+    </div>
+    <button
+      class="w-full mt-6 py-2.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-xl hover:bg-indigo-100 transition-colors"
+    >
+      View All Activity
+    </button>
+  </div>
+</div>
+
+<!-- Recent Orders Table -->
+<div
+  class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden"
+>
+  <div class="p-6 border-b border-slate-100">
+    <div class="flex items-center justify-between">
+      <h3 class="text-lg font-bold text-slate-900">Recent Orders</h3>
+      <a
+        href="#orders"
+        class="text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors"
+      >
+        View All <i class="fa-solid fa-arrow-right ml-1"></i>
+      </a>
+    </div>
+  </div>
+  <div class="overflow-x-auto">
+    <table class="w-full">
+      <thead class="bg-slate-50">
+        <tr>
+          <th
+            class="text-left text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4"
+          >
+            Order ID
+          </th>
+          <th
+            class="text-left text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4"
+          >
+            Customer
+          </th>
+          <th
+            class="text-left text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4"
+          >
+            Product
+          </th>
+          <th
+            class="text-left text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4"
+          >
+            Amount
+          </th>
+          <th
+            class="text-left text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4"
+          >
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100">
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="px-6 py-4 text-sm font-medium text-slate-900">
+            #ORD-7341
+          </td>
+          <td class="px-6 py-4">
+            <div class="flex items-center">
+              <img
+                src="https://ui-avatars.com/api/?name=John+Doe&background=6366f1&color=fff"
+                class="w-8 h-8 rounded-full mr-3"
+                alt=""
+              />
+              <span class="text-sm text-slate-900">John Doe</span>
+            </div>
+          </td>
+          <td class="px-6 py-4 text-sm text-slate-600">iPhone 15 Pro Max</td>
+          <td class="px-6 py-4 text-sm font-medium text-slate-900">
+            Rp 21.500.000
+          </td>
+          <td class="px-6 py-4">
+            <span
+              class="px-3 py-1 text-xs font-semibold bg-emerald-100 text-emerald-600 rounded-full"
+              >Completed</span
+            >
+          </td>
+        </tr>
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="px-6 py-4 text-sm font-medium text-slate-900">
+            #ORD-7340
+          </td>
+          <td class="px-6 py-4">
+            <div class="flex items-center">
+              <img
+                src="https://ui-avatars.com/api/?name=Sarah+W&background=ec4899&color=fff"
+                class="w-8 h-8 rounded-full mr-3"
+                alt=""
+              />
+              <span class="text-sm text-slate-900">Sarah Wilson</span>
+            </div>
+          </td>
+          <td class="px-6 py-4 text-sm text-slate-600">MacBook Air M3</td>
+          <td class="px-6 py-4 text-sm font-medium text-slate-900">
+            Rp 18.999.000
+          </td>
+          <td class="px-6 py-4">
+            <span
+              class="px-3 py-1 text-xs font-semibold bg-amber-100 text-amber-600 rounded-full"
+              >Processing</span
+            >
+          </td>
+        </tr>
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="px-6 py-4 text-sm font-medium text-slate-900">
+            #ORD-7339
+          </td>
+          <td class="px-6 py-4">
+            <div class="flex items-center">
+              <img
+                src="https://ui-avatars.com/api/?name=Mike+C&background=22c55e&color=fff"
+                class="w-8 h-8 rounded-full mr-3"
+                alt=""
+              />
+              <span class="text-sm text-slate-900">Mike Chen</span>
+            </div>
+          </td>
+          <td class="px-6 py-4 text-sm text-slate-600">AirPods Pro 2</td>
+          <td class="px-6 py-4 text-sm font-medium text-slate-900">
+            Rp 3.999.000
+          </td>
+          <td class="px-6 py-4">
+            <span
+              class="px-3 py-1 text-xs font-semibold bg-indigo-100 text-indigo-600 rounded-full"
+              >Shipped</span
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  // Revenue Chart Initialization
+  const canvas = document.getElementById("revenueChart");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+
+    // Data for different periods (dalam rupiah)
+    const chartData = {
+      monthly: {
+        labels: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ],
+        revenue: [
+          42000000, 58000000, 35000000, 52000000, 68000000, 48000000, 72000000,
+          45000000, 62000000, 78000000, 55000000, 85000000,
+        ],
+      },
+      weekly: {
+        labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+        revenue: [18000000, 25000000, 22000000, 28000000],
+      },
+      daily: {
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        revenue: [
+          4200000, 5800000, 3500000, 6200000, 7800000, 8500000, 6800000,
+        ],
+      },
+    };
+
+    // Format number to Rupiah
+    function formatRupiah(value) {
+      return "Rp " + value.toLocaleString("id-ID");
+    }
+
+    let revenueChart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: chartData.monthly.labels,
+        datasets: [
+          {
+            label: "Revenue",
+            data: chartData.monthly.revenue,
+            backgroundColor: "rgba(99, 102, 241, 0.8)",
+            hoverBackgroundColor: "rgba(99, 102, 241, 1)",
+            borderRadius: 8,
+            borderSkipped: false,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: {
+          duration: 1000,
+          easing: "easeOutQuart",
+          delay: (context) => {
+            let delay = 0;
+            if (context.type === "data" && context.mode === "default") {
+              delay = context.dataIndex * 50;
+            }
+            return delay;
+          },
+        },
+        animations: {
+          y: {
+            duration: 1000,
+            easing: "easeOutQuart",
+            from: (ctx) => {
+              if (ctx.type === "data") {
+                return ctx.chart.scales.y.getPixelForValue(0);
+              }
+            },
+          },
+          x: {
+            duration: 0,
+          },
+        },
+        interaction: {
+          intersect: false,
+          mode: "index",
+        },
+        plugins: {
+          legend: {
+            display: false,
+            position: "top",
+            align: "end",
+            labels: {
+              usePointStyle: true,
+              pointStyle: "rectRounded",
+              padding: 20,
+              font: { family: "Inter", size: 12 },
+            },
+          },
+          tooltip: {
+            backgroundColor: "#1e293b",
+            padding: 12,
+            cornerRadius: 8,
+            usePointStyle: true,
+            callbacks: {
+              label: (context) => formatRupiah(context.parsed.y),
+            },
+          },
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { font: { family: "Inter", size: 12 }, color: "#94a3b8" },
+          },
+          y: {
+            beginAtZero: true,
+            grid: { color: "#f1f5f9", drawBorder: false },
+            ticks: {
+              font: { family: "Inter", size: 12 },
+              color: "#94a3b8",
+              callback: (value) => formatRupiah(value),
+            },
+          },
+        },
+      },
+    });
+
+    // Button event listeners for switching periods
+    const btnMonthly = document.getElementById("btnMonthly");
+    const btnWeekly = document.getElementById("btnWeekly");
+    const btnDaily = document.getElementById("btnDaily");
+    const allBtns = [btnMonthly, btnWeekly, btnDaily];
+
+    function updateActiveButton(activeBtn) {
+      allBtns.forEach((btn) => {
+        btn.classList.remove("bg-indigo-100", "text-indigo-600");
+        btn.classList.add("text-slate-500");
+      });
+      activeBtn.classList.remove("text-slate-500");
+      activeBtn.classList.add("bg-indigo-100", "text-indigo-600");
+    }
+
+    function updateChart(period) {
+      revenueChart.data.labels = chartData[period].labels;
+      revenueChart.data.datasets[0].data = chartData[period].revenue;
+      revenueChart.update();
+    }
+
+    btnMonthly.addEventListener("click", () => {
+      updateActiveButton(btnMonthly);
+      updateChart("monthly");
+    });
+
+    btnWeekly.addEventListener("click", () => {
+      updateActiveButton(btnWeekly);
+      updateChart("weekly");
+    });
+
+    btnDaily.addEventListener("click", () => {
+      updateActiveButton(btnDaily);
+      updateChart("daily");
+    });
+  }
+</script>

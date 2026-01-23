@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer components {
+  /* Navigation Item Styles */
+  .nav-item {
+    @apply text-slate-400 hover:text-white hover:bg-slate-800;
+  }
+
+  .nav-item.active {
+    @apply bg-gradient-to-r from-indigo-600 to-indigo-500 text-white;
+  }
+
+  /* Card Styles */
+  .stat-card {
+    @apply bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300;
+  }
+
+  /* Chart Bar Animation */
+  .chart-bar {
+    animation: growUp 1s ease-out forwards;
+    transform-origin: bottom;
+  }
+
+  /* Sidebar transition */
+  .sidebar-open {
+    transform: translateX(0);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* Table hover effect */
+  .table-row-hover {
+    @apply hover:bg-slate-50 transition-colors;
+  }
+
+  /* Badge styles */
+  .badge-success {
+    @apply px-3 py-1 text-xs font-semibold bg-emerald-100 text-emerald-600 rounded-full;
+  }
+
+  .badge-warning {
+    @apply px-3 py-1 text-xs font-semibold bg-amber-100 text-amber-600 rounded-full;
+  }
+
+  .badge-danger {
+    @apply px-3 py-1 text-xs font-semibold bg-rose-100 text-rose-600 rounded-full;
+  }
+
+  .badge-info {
+    @apply px-3 py-1 text-xs font-semibold bg-indigo-100 text-indigo-600 rounded-full;
+  }
+}
+
+@layer utilities {
+  /* Text Gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Glass Effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Dark Glass Effect */
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Animations */
+@keyframes growUp {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Pulse animation for notification dots */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.pulse-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  animation: pulse-ring 1.5s infinite;
+}
